@@ -40,7 +40,7 @@ const startServer = async () => {
 
     // Iniciar o servidor Express e obter a instância do servidor HTTP
     const server = app.listen(API_PORT, () => {
-      console.log(`SERVER RUNNING AT: http://localhost:${API_PORT} SSL🔥`);
+      console.log(`SERVER RUNNING AT: http://localhost:${API_PORT} SEM SSL🔥`);
     });
 
     // Captura de sinais de terminação (como SIGTERM) para uma finalização limpa
