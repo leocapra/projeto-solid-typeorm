@@ -8,7 +8,7 @@ dotenv.config();
 
 // Configuração do servidor
 const app = express();
-const API_PORT = parseInt(process.env.API_PORT || "3333");
+const API_PORT = parseInt(process.env.API_PORT || "3333", 10);
 const CORS_ORIGIN = process.env.CLIENT_URL || "*";
 
 // Habilitar CORS permitindo todos os métodos
@@ -38,7 +38,7 @@ const startServer = async () => {
 
     console.log("Connected to the database.");
 
-    // Iniciar o servidor Express e obter a instância do servidor HTTP
+    // Iniciar o servidor Express
     const server = app.listen(API_PORT, () => {
       console.log(`SERVER RUNNING AT: http://localhost:${API_PORT} SEM SSL🔥`);
     });
@@ -61,7 +61,11 @@ const startServer = async () => {
     });
 
   } catch (error) {
-    console.error("Error connecting to the database:", (error as Error).message);
+    if (error instanceof Error) {
+      console.error("Error connecting to the database:", error.message);
+    } else {
+      console.error("Error connecting to the database: Unknown error", error);
+    }
     process.exit(1); // Encerra o processo em caso de erro grave
   }
 };
@@ -72,10 +76,9 @@ startServer();
 // Captura de exceções não tratadas
 process.on("uncaughtException", (error) => {
   if (error instanceof Error) {
-    // Agora o TypeScript sabe que o "error" é um tipo Error
+    // Garantindo que o "error" seja tratado como um tipo Error no TypeScript
     console.error("Uncaught Exception:", error.message);
   } else {
-    // Caso o "error" não seja um Error, loga o erro de maneira genérica
     console.error("Uncaught Exception: Unknown error", error);
   }
   process.exit(1); // Encerra o processo com código de erro
