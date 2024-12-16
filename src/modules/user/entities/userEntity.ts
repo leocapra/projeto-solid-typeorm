@@ -21,4 +21,8 @@ export class User {
     // E-mail do usuário
     @Column({ type: "varchar", length: 255, unique: true })
     email!: string;
+
+    // Data de criação
+    @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+    createdAt!: Date;
 }
