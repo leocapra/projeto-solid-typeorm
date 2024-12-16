@@ -1,23 +1,4 @@
 # Awesome Project Built with TypeORM
-
-### Steps to run this project:
-
-1. Install TypeORM globally:
-
-    ```bash
-    npm install -g typeorm
-    ```
-
-2. Initialize the project with TypeORM and Postgres:
-
-    ```bash
-    typeorm init --name project --database postgres
-    ```
-
-3. Follow solid principles and conventions to build your app.
-
----
-
 # Estrutura do Projeto
 
 Abaixo está a estrutura de diretórios recomendada para o projeto.
@@ -75,7 +56,7 @@ SOLID
 │   │   │   │   └── 1633553953138-CreateUsersTable.ts  # Exemplo de migração
 │   │   │   ├── /seeds            # Arquivos de seeds para popular o banco de dados
 │   │   │   │   └── userSeed.ts   # Exemplo de seed para o usuário
-│   │   │   └── index.ts          
+│   │   │   └── /index.ts           # Arquivos de configuração de banco de dados (não mudou)
 │   │   ├── /middleware           # Middlewares (autenticação, logging, etc.)
 │   │   │   └── authMiddleware.ts # Middleware de autenticação
 │   │   └── /utils                # Funções utilitárias globais
