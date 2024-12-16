@@ -21,8 +21,8 @@
    },
    "scripts": {
       "dev": "NODE_ENV=development tsnd -r tsconfig-paths/register --poll --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-      "migration:create": "typeorm-ts-node-commonjs migration:create src/shared/database/migrations/${new Date().getTime()}-NomeDaMigration",
-      "migration:generate": "typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:generate ./src/shared/database/migrations/default",
+      "migration:create": "typeorm-ts-node-commonjs migration:create src/shared/database/migrations/TabelaDoLeo",
+      "migration:generate": "typeorm -d ./src/config/data-source.ts migration:generate ./src/shared/database/migrations/default",
       "migration:run": "typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:run"  
     }
 }
