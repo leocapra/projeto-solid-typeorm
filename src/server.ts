@@ -1,5 +1,5 @@
 import express from "express";
-import { AppDataSource } from "./config/data-source";
+import { AppDataSource } from "../data-source";
 import * as dotenv from "dotenv";
 import cors from "cors";
 

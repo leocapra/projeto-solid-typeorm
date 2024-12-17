@@ -1,4 +1,4 @@
-import { AppDataSource } from '../../config/data-source'; // Importando a configuração do TypeORM
+import { AppDataSource } from '../../../data-source'; // Importando a configuração do TypeORM
 
 const connect = async () => {
   try {
